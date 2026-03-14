@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://x2rgwckbpi1y"]
+[gd_scene format=3 uid="uid://x2rgwckbpi1y"]
 
 [ext_resource type="Script" uid="uid://ds406ao3vejr6" path="res://scripts/fdp.gd" id="1_4ep0n"]
 [ext_resource type="Texture2D" uid="uid://dx8yivvue1phm" path="res://sprites/pixil-frame-0_1.png" id="1_f50pn"]
@@ -34,6 +34,14 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dd465"]
 atlas = ExtResource("1_f50pn")
 region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2x0g"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgx8n"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(32, 160, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ep0n"]
 atlas = ExtResource("1_f50pn")
@@ -110,6 +118,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_j2x0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgx8n")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4ep0n")
 }, {
 "duration": 1.0,
@@ -141,18 +160,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn0ii"]
 size = Vector2(7.5, 15)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1639992757]
 position = Vector2(-6, -1)
 collision_layer = 2
 script = ExtResource("1_4ep0n")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1092195221]
 position = Vector2(-1, -8)
 sprite_frames = SubResource("SpriteFrames_lhvu3")
-animation = &"death"
+animation = &"jump"
 autoplay = "idle"
+frame_progress = 0.7238757
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1245950253]
 position = Vector2(-0.25, -3.5)
 shape = SubResource("RectangleShape2D_mn0ii")
 
