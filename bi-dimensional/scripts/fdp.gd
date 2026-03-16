@@ -38,24 +38,17 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	
-	# Lógica de empuje corregida
+
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
 		if collider is RigidBody2D:
-			# Obtenemos el vector normal del choque
 			var normal = collision.get_normal()
 			
-			# FILTRO: Solo empujamos si la normal es mayormente horizontal
-			# (abs(normal.x) > 0.5 significa que el choque es lateral)
-			# (abs(normal.y) < 0.5 asegura que NO estemos encima de ella)
 			if abs(normal.x) > 0.5 and abs(normal.y) < 0.5:
-				# La velocidad de empuje fija (que no aumenta)
 				var push_speed = 40.0 
 				
-				# Aplicamos velocidad solo si el personaje tiene dirección horizontal
 				if direction != 0:
 					collider.linear_velocity.x = direction * push_speed
 				else:
