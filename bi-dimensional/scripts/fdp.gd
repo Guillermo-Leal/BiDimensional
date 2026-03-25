@@ -8,7 +8,6 @@ const JUMP_VELOCITY = -400.0
 var is_dead = false
 var last_direction = 1
 var change = false
-var frame_actual
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
