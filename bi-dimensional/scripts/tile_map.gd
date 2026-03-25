@@ -2,7 +2,12 @@ extends TileMap
 
 var invertido := false
 
-func _input(event):
-	if Input.is_action_just_pressed("change"):
-		invertido = !invertido
+func toggle_color():
+	invertido = !invertido
+	if material:
+		material.set_shader_parameter("invert", invertido)
+
+func resetColor():
+	invertido = false
+	if material:
 		material.set_shader_parameter("invert", invertido)

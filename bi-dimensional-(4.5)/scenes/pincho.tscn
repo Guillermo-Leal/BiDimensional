@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cetiqapmk3msg"]
+
+[ext_resource type="Texture2D" uid="uid://b8uncwloltukm" path="res://sprites/Pincho.png" id="1_jbf7v"]
+[ext_resource type="PackedScene" uid="uid://bpobt7m3fbmku" path="res://scenes/killzone.tscn" id="2_dqu2g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dj5d"]
+atlas = ExtResource("1_jbf7v")
+region = Rect2(144, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5oi61"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dj5d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf23v"]
+size = Vector2(16, 9)
+
+[node name="Pincho" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5oi61")
+
+[node name="Killzone" parent="." instance=ExtResource("2_dqu2g")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_xf23v")

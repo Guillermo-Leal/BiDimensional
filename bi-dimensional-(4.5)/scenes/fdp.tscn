@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://x2rgwckbpi1y"]
+[gd_scene load_steps=42 format=3 uid="uid://x2rgwckbpi1y"]
 
 [ext_resource type="Script" uid="uid://ds406ao3vejr6" path="res://scripts/fdp.gd" id="1_4ep0n"]
 [ext_resource type="Texture2D" uid="uid://clxypxb87062c" path="res://sprites/fedePN.png" id="3_cgks4"]
@@ -302,18 +302,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn0ii"]
 size = Vector2(7.5, 17)
 
-[node name="fedeP" type="CharacterBody2D" unique_id=710966174]
+[node name="fedeP" type="CharacterBody2D"]
 position = Vector2(-6, -1)
 collision_layer = 3
 script = ExtResource("1_4ep0n")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1736431493]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -8)
 sprite_frames = SubResource("SpriteFrames_lhvu3")
 animation = &"idleWhite"
 autoplay = "idleWhite"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=657762887]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.25, -2.5)
 shape = SubResource("RectangleShape2D_mn0ii")
 

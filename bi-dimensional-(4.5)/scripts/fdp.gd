@@ -1,14 +1,12 @@
 extends CharacterBody2D
 
 @export var PUSH_FORCE = 50.0 # La fuerza con la que empujas la caja
-@onready var tilemap = get_parent().get_node("TileMap")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 var is_dead = false
 var last_direction = 1
 var change = false
-var frame_actual
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -16,17 +14,6 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("change"):
 		change = !change
-		
-		var anim_actual = animated_sprite_2d.animation
-		
-		var anim = anim_actual
-		if change:
-			anim = anim_actual.replace("White", "Black")
-		else:
-			anim = anim_actual.replace("Black", "White")
-		
-		cambiarAnim(anim)
-		tilemap.toggle_color()
 		
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -47,25 +34,19 @@ func _physics_process(delta: float) -> void:
 	if change == false:
 		if is_on_floor():
 			if direction != 0:
-				if animated_sprite_2d.animation != "movementWhite":
-					animated_sprite_2d.play("movementWhite")
+				animated_sprite_2d.play("movementWhite")
 			else:
-				if animated_sprite_2d.animation != "idleWhite":
-					animated_sprite_2d.play("idleWhite")
+				animated_sprite_2d.play("idleWhite")
 		else:
-			if animated_sprite_2d.animation != "jumpWhite":
-					animated_sprite_2d.play("jumpWhite")
+			animated_sprite_2d.play("jumpWhite")
 	else: 
 		if is_on_floor():
 			if direction != 0:
-				if animated_sprite_2d.animation != "movementBlack":
-					animated_sprite_2d.play("movementBlack")
+				animated_sprite_2d.play("movementBlack")
 			else:
-				if animated_sprite_2d.animation != "idleBlack":
-					animated_sprite_2d.play("idleBlack")
+				animated_sprite_2d.play("idleBlack")
 		else:
-			if animated_sprite_2d.animation != "jumpBlack":
-					animated_sprite_2d.play("jumpBlack")
+			animated_sprite_2d.play("jumpBlack")
 
 	if direction:
 		velocity.x = direction * SPEED
@@ -85,15 +66,7 @@ func _physics_process(delta: float) -> void:
 				else:
 					collider.linear_velocity.x = 0
 	move_and_slide()
-	
-func cambiarAnim(anim):
-	var frame = animated_sprite_2d.frame
-	var progreso = animated_sprite_2d.frame_progress
-	
-	animated_sprite_2d.play(anim)
-	animated_sprite_2d.frame = frame
-	animated_sprite_2d.frame_progress = progreso
-	
+
 func die():
 	is_dead = true
 	velocity = Vector2.ZERO
@@ -105,5 +78,4 @@ func die():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	print("Animacion terminada")
 	if animated_sprite_2d.animation == "deathWhite" or animated_sprite_2d.animation =="deathBlack":
-		tilemap.resetColor()
 		get_tree().reload_current_scene()
