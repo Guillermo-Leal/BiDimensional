@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmt4i0bpmxhj4"]
+[gd_scene format=3 uid="uid://bmt4i0bpmxhj4"]
 
 [ext_resource type="Shader" uid="uid://8i4qvsg34u5n" path="res://scenes/PantallaEjemplo.gdshader" id="1_17am0"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://sprites/world_tileset.png" id="1_v6vac"]
@@ -188,10 +188,13 @@ physics_layer_1/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_4dvvg")
 sources/1 = SubResource("TileSetAtlasSource_bfri1")
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfri1"]
+radius = 5.569078
+
+[node name="Node2D" type="Node2D" unique_id=1843939567]
 material = SubResource("ShaderMaterial_m3vjt")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." unique_id=1663632370]
 material = SubResource("ShaderMaterial_bfri1")
 position = Vector2(5, -3)
 tile_set = SubResource("TileSet_rnjyy")
@@ -202,42 +205,51 @@ layer_1/name = "Foreground"
 layer_1/tile_data = PackedInt32Array(196607, 65537, 0, 131072, 65537, 0, 131073, 65537, 0, 131074, 65537, 0, 131075, 65537, 0, 131076, 65537, 0, 131077, 65537, 0, 131078, 65537, 0, 131079, 65537, 0, 131080, 65537, 0, 131081, 65537, 0, 131082, 65537, 0, 131083, 65537, 0, 131084, 65537, 0, 131085, 65537, 0, 131086, 65537, 0, 131087, 65537, 0, 131088, 65537, 0, 131089, 65537, 0, 131090, 65537, 0, 131091, 65537, 0, 131092, 65537, 0, 65556, 65537, 0, 20, 65537, 0, -65516, 65537, 0, -131052, 65537, 0, -196588, 65537, 0, -262124, 65537, 0, -327660, 65537, 0, -393196, 65537, 0, -458732, 65537, 0, -524268, 65537, 0, -589804, 65537, 0, -655340, 65537, 0, -720876, 65537, 0, -786412, 65537, 0, -851948, 65537, 0, -917484, 65537, 0, -983020, 65537, 0, -1048556, 65537, 0, 131071, 65537, 0, 65535, 65537, 0, -1, 65537, 0, -65537, 65537, 0, -131073, 65537, 0, -196609, 65537, 0, -262145, 65537, 0, -327681, 65537, 0, -393217, 65537, 0, -458753, 65537, 0, -524289, 65537, 0, -589825, 65537, 0, -655361, 65537, 0, -720897, 65537, 0, -786433, 65537, 0, -851969, 65537, 0, -917505, 65537, 0, -983041, 65537, 0, -1048577, 65537, 0, -1114112, 65537, 0, -1114111, 65537, 0, -1114110, 65537, 0, -1114109, 65537, 0, -1114108, 65537, 0, -1114107, 65537, 0, -1114106, 65537, 0, -1114105, 65537, 0, -1114104, 65537, 0, -1114103, 65537, 0, -1114102, 65537, 0, -1114101, 65537, 0, -1114100, 65537, 0, -1114099, 65537, 0, -1114098, 65537, 0, -1114097, 65537, 0, -1114096, 65537, 0, -1114095, 65537, 0, -1114094, 65537, 0, -1114093, 65537, 0, -1114092, 65537, 0, -131056, 65537, 0, -131057, 65537, 0, -131058, 65537, 0, -131055, 65537, 0, -131054, 65537, 0, -262132, 65537, 0, -262133, 65537, 0, -262134, 65537, 0, -262135, 65537, 0, -262136, 65537, 0, -262137, 65537, 0, -458747, 65537, 0, -458748, 65537, 0, -458749, 65537, 0, -458750, 65537, 0, -458751, 65537, 0, -524287, 65537, 0, -524288, 65537, 0, -786425, 65537, 0, -786424, 65537, 0, -786423, 65537, 0, -786422, 65537, 0, -786421, 65537, 0, -786420, 65537, 0, -720881, 65537, 0, -720880, 65537, 0, -720879, 65537, 0, -720878, 65537, 0, -720877, 65537, 0, -851950, 262145, 2, -917486, 262145, 1, -983022, 262145, 0, -1048558, 262145, 0)
 script = ExtResource("5_23wih")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1985888970]
 position = Vector2(166, -120)
 zoom = Vector2(2.8, 2.8)
 limit_bottom = 300
 
-[node name="Pinchos" type="Node" parent="."]
+[node name="Pinchos" type="Node" parent="." unique_id=706929433]
 
-[node name="Pincho" parent="Pinchos" instance=ExtResource("3_17am0")]
+[node name="Pincho" parent="Pinchos" unique_id=877588375 instance=ExtResource("3_17am0")]
 position = Vector2(269, -43)
 
-[node name="Pincho2" parent="Pinchos" instance=ExtResource("3_17am0")]
+[node name="Pincho2" parent="Pinchos" unique_id=1439799055 instance=ExtResource("3_17am0")]
 position = Vector2(285, -43)
 
-[node name="Pincho3" parent="Pinchos" instance=ExtResource("3_17am0")]
+[node name="Pincho3" parent="Pinchos" unique_id=1174596765 instance=ExtResource("3_17am0")]
 position = Vector2(301, -43)
 
-[node name="Pincho4" parent="Pinchos" instance=ExtResource("3_17am0")]
+[node name="Pincho4" parent="Pinchos" unique_id=982301326 instance=ExtResource("3_17am0")]
 position = Vector2(141, -75)
 
-[node name="Pincho5" parent="Pinchos" instance=ExtResource("3_17am0")]
+[node name="Pincho5" parent="Pinchos" unique_id=1968542408 instance=ExtResource("3_17am0")]
 position = Vector2(125, -75)
 
-[node name="Pincho6" parent="Pinchos" instance=ExtResource("3_17am0")]
+[node name="Pincho6" parent="Pinchos" unique_id=929102837 instance=ExtResource("3_17am0")]
 position = Vector2(157, -75)
 
-[node name="Pincho7" parent="Pinchos" instance=ExtResource("3_17am0")]
+[node name="Pincho7" parent="Pinchos" unique_id=641145592 instance=ExtResource("3_17am0")]
 position = Vector2(45, -123)
 
-[node name="Pincho8" parent="Pinchos" instance=ExtResource("3_17am0")]
+[node name="Pincho8" parent="Pinchos" unique_id=999272886 instance=ExtResource("3_17am0")]
 position = Vector2(61, -123)
 
-[node name="Pincho9" parent="Pinchos" instance=ExtResource("3_17am0")]
+[node name="Pincho9" parent="Pinchos" unique_id=1669796270 instance=ExtResource("3_17am0")]
 position = Vector2(13, -139)
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("4_bfri1")]
+[node name="CharacterBody2D2" parent="." unique_id=24258340 instance=ExtResource("4_bfri1")]
 position = Vector2(190, 13)
 
-[node name="fedeP" parent="." instance=ExtResource("2_k565r")]
+[node name="fedeP" parent="." unique_id=747826244 instance=ExtResource("2_k565r")]
 position = Vector2(31, 23)
+
+[node name="WinZone" type="Area2D" parent="." unique_id=1391589238]
+position = Vector2(300.4649, -195.61429)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone" unique_id=1598803348]
+position = Vector2(0.5350952, -0.38571167)
+shape = SubResource("CircleShape2D_bfri1")
+
+[connection signal="body_entered" from="WinZone" to="TileMap" method="_on_win_zone_body_entered"]
