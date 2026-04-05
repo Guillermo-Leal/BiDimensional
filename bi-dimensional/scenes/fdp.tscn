@@ -4,6 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://clxypxb87062c" path="res://sprites/fedePN.png" id="3_cgks4"]
 [ext_resource type="Texture2D" uid="uid://dx8yivvue1phm" path="res://sprites/fedeP.png" id="4_j2ast"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tlsi"]
+atlas = ExtResource("4_j2ast")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21f5p"]
+atlas = ExtResource("4_j2ast")
+region = Rect2(128, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0thk"]
+atlas = ExtResource("4_j2ast")
+region = Rect2(160, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r51d"]
+atlas = ExtResource("4_j2ast")
+region = Rect2(192, 160, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_knt3w"]
 atlas = ExtResource("4_j2ast")
 region = Rect2(32, 224, 32, 32)
@@ -150,6 +166,23 @@ region = Rect2(224, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lhvu3"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tlsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21f5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0thk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7r51d")
+}],
+"loop": true,
+"name": &"PushPullWhite",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_knt3w")
@@ -310,8 +343,10 @@ script = ExtResource("1_4ep0n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1736431493]
 position = Vector2(-1, -8)
 sprite_frames = SubResource("SpriteFrames_lhvu3")
-animation = &"idleWhite"
+animation = &"PushPullWhite"
 autoplay = "idleWhite"
+frame = 2
+frame_progress = 0.08180032
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=657762887]
 position = Vector2(-0.25, -2.5)
