@@ -12,7 +12,6 @@ func resetColor():
 	if material:
 		material.set_shader_parameter("invert", invertido)
 
-
 func _on_win_zone_body_entered(body: Node2D) -> void:
 	if body.name == "fedeP":
 		print("Felicidades has ganado.")

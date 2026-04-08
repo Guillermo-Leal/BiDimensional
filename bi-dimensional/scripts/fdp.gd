@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var PUSH_FORCE = 50.0 # La fuerza con la que empujas la caja
 @onready var tilemap = get_parent().get_node("TileMap")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var ray_cast_izquierda: RayCast2D = $RayCastIzquierda
+@onready var ray_cast_derecha: RayCast2D = $RayCastDerecha
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 var is_dead = false
@@ -15,14 +17,9 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("change"):
 		change = !change
-		
 		var anim_actual = animated_sprite_2d.animation
-		
 		var anim = anim_actual
-		if change:
-			anim = anim_actual.replace("White", "Black")
-		else:
-			anim = anim_actual.replace("Black", "White")
+
 		
 		cambiarAnim(anim)
 		tilemap.toggle_color()
@@ -39,12 +36,16 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 	elif direction < 0:
 		animated_sprite_2d.flip_h = true
-
+	
 	if direction != 0:
 		last_direction = direction
 		
 	if change == false:
-		if is_on_floor():
+		if ray_cast_derecha.is_colliding():
+			animated_sprite_2d.play("PushPullWhite")
+		elif ray_cast_izquierda.is_colliding():
+			animated_sprite_2d.play("PushPullWhite")
+		elif is_on_floor():
 			if direction != 0:
 				if animated_sprite_2d.animation != "movementWhite":
 					animated_sprite_2d.play("movementWhite")
@@ -55,7 +56,11 @@ func _physics_process(delta: float) -> void:
 			if animated_sprite_2d.animation != "jumpWhite":
 					animated_sprite_2d.play("jumpWhite")
 	else: 
-		if is_on_floor():
+		if ray_cast_derecha.is_colliding():
+			animated_sprite_2d.play("PushPullBlack")
+		elif ray_cast_izquierda.is_colliding():
+			animated_sprite_2d.play("PushPullBlack")
+		elif is_on_floor():
 			if direction != 0:
 				if animated_sprite_2d.animation != "movementBlack":
 					animated_sprite_2d.play("movementBlack")
@@ -65,14 +70,18 @@ func _physics_process(delta: float) -> void:
 		else:
 			if animated_sprite_2d.animation != "jumpBlack":
 					animated_sprite_2d.play("jumpBlack")
-
+	
+	
+	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
+		
 		if collider is RigidBody2D:
 			var normal = collision.get_normal()
 			
@@ -83,6 +92,7 @@ func _physics_process(delta: float) -> void:
 					collider.linear_velocity.x = direction * push_speed
 				else:
 					collider.linear_velocity.x = 0
+
 	move_and_slide()
 	
 func cambiarAnim(anim):
@@ -96,7 +106,7 @@ func cambiarAnim(anim):
 func die():
 	is_dead = true
 	velocity = Vector2.ZERO
-	if last_direction>0:
+	if change == false:
 		animated_sprite_2d.play("deathWhite")
 	else:
 		animated_sprite_2d.play("deathBlack")
