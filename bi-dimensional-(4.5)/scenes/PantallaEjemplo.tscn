@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmt4i0bpmxhj4"]
+[gd_scene load_steps=14 format=3 uid="uid://bmt4i0bpmxhj4"]
 
 [ext_resource type="Shader" uid="uid://8i4qvsg34u5n" path="res://scenes/PantallaEjemplo.gdshader" id="1_17am0"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://sprites/world_tileset.png" id="1_v6vac"]
@@ -188,6 +188,9 @@ physics_layer_1/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_4dvvg")
 sources/1 = SubResource("TileSetAtlasSource_bfri1")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfri1"]
+radius = 5.569078
+
 [node name="Node2D" type="Node2D"]
 material = SubResource("ShaderMaterial_m3vjt")
 
@@ -224,9 +227,6 @@ position = Vector2(141, -75)
 [node name="Pincho5" parent="Pinchos" instance=ExtResource("3_17am0")]
 position = Vector2(125, -75)
 
-[node name="Pincho6" parent="Pinchos" instance=ExtResource("3_17am0")]
-position = Vector2(157, -75)
-
 [node name="Pincho7" parent="Pinchos" instance=ExtResource("3_17am0")]
 position = Vector2(45, -123)
 
@@ -237,7 +237,16 @@ position = Vector2(61, -123)
 position = Vector2(13, -139)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("4_bfri1")]
-position = Vector2(190, 13)
+position = Vector2(202, -75)
 
 [node name="fedeP" parent="." instance=ExtResource("2_k565r")]
 position = Vector2(31, 23)
+
+[node name="WinZone" type="Area2D" parent="."]
+position = Vector2(300.4649, -195.61429)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone"]
+position = Vector2(0.5350952, -0.38571167)
+shape = SubResource("CircleShape2D_bfri1")
+
+[connection signal="body_entered" from="WinZone" to="TileMap" method="_on_win_zone_body_entered"]
