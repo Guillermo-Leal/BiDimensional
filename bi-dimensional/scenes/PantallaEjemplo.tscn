@@ -241,6 +241,10 @@ position = Vector2(13, -139)
 position = Vector2(202, -75)
 script = ExtResource("7_uda66")
 
+[node name="Caja2" parent="." unique_id=1579877910 instance=ExtResource("4_bfri1")]
+position = Vector2(242, -43)
+script = ExtResource("7_uda66")
+
 [node name="fedeP" parent="." unique_id=1749964503 instance=ExtResource("2_k565r")]
 position = Vector2(31, 23)
 

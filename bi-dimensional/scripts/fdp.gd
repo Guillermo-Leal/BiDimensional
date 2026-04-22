@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @export var PUSH_FORCE = 50.0 # La fuerza con la que empujas la caja
 @onready var tilemap = get_parent().get_node("TileMap")
-@onready var caja = get_parent().get_node("Caja1")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_izquierda: RayCast2D = $RayCastIzquierda
 @onready var ray_cast_derecha: RayCast2D = $RayCastDerecha
@@ -24,7 +23,6 @@ func _physics_process(delta: float) -> void:
 		
 		cambiarAnim(anim)
 		tilemap.toggle_color()
-		caja.toggle_color()
 		
 	if not is_on_floor():
 		velocity += get_gravity() * delta

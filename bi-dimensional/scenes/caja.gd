@@ -6,6 +6,9 @@ var textura_negra = preload("res://sprites/caja_Negro.png")
 func _ready() -> void:
 	pass # Replace with function body.
 
+func _input(event):
+	if event.is_action_pressed("change"):
+		toggle_color()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
