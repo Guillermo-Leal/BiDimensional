@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://q8212sc4duqu"]
+
+[ext_resource type="Texture2D" uid="uid://hukju6oqdj0q" path="res://sprites/puerta_cerrada.png" id="1_1b3uk"]
+[ext_resource type="Script" uid="uid://yavkla2d5f5e" path="res://scripts/puerta.gd" id="1_gjhiy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gjhiy"]
+radius = 8.0
+
+[node name="WinZone" type="Area2D" unique_id=772972819]
+collision_layer = 3
+script = ExtResource("1_gjhiy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1609524864]
+texture = ExtResource("1_1b3uk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1544278677]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_gjhiy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
