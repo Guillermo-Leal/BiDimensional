@@ -33,6 +33,7 @@ offset_left = 393.0
 offset_top = 221.0
 offset_right = 657.0
 offset_bottom = 372.0
+theme_override_fonts/font = ExtResource("2_51upa")
 text = "Start
 "
 
@@ -42,6 +43,7 @@ offset_left = 395.0
 offset_top = 402.0
 offset_right = 659.0
 offset_bottom = 541.0
+theme_override_fonts/font = ExtResource("2_51upa")
 text = "Options
 "
 
@@ -51,6 +53,7 @@ offset_left = 397.0
 offset_top = 567.0
 offset_right = 658.0
 offset_bottom = 696.0
+theme_override_fonts/font = ExtResource("2_51upa")
 text = "Quit
 "
 
