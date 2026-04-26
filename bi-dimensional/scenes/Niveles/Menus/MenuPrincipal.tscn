@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://r04f7ttfj2ec"]
+
+[ext_resource type="Script" uid="uid://be8lsbxkiil8v" path="res://scenes/Niveles/Menus/menu_principal.gd" id="1_yx3rq"]
+[ext_resource type="Texture2D" uid="uid://yrrek6nnr8fp" path="res://sprites/FondoTemporal.png" id="2_12vqk"]
+[ext_resource type="FontFile" uid="uid://dwhkbbuogd5is" path="res://TextFonts/HennyPenny-Regular.ttf" id="2_51upa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ev2af"]
+texture = ExtResource("2_12vqk")
+
+[node name="MenuPrincipal" type="Node2D"]
+script = ExtResource("1_yx3rq")
+
+[node name="ButtonManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 1044.0
+offset_bottom = 897.0
+
+[node name="Panel" type="Panel" parent="ButtonManager"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ev2af")
+
+[node name="Start" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 221.0
+offset_right = 657.0
+offset_bottom = 372.0
+text = "Start
+"
+
+[node name="Options" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 402.0
+offset_right = 659.0
+offset_bottom = 541.0
+text = "Options
+"
+
+[node name="Quit" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 567.0
+offset_right = 658.0
+offset_bottom = 696.0
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 287.0
+offset_top = 85.0
+offset_right = 748.0
+offset_bottom = 205.0
+theme_override_fonts/font = ExtResource("2_51upa")
+theme_override_font_sizes/font_size = 67
+text = "Bi-Dimensional"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ButtonManager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ButtonManager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]

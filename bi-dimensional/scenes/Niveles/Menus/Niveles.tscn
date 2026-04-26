@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://01oscy33aeu"]
+
+[ext_resource type="Script" uid="uid://dapthmolcnw0m" path="res://scenes/Niveles/Menus/niveles.gd" id="1_0m1ny"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k8887"]
+
+[node name="Niveles" type="Node2D"]
+script = ExtResource("1_0m1ny")
+
+[node name="Levels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1046.0
+offset_bottom = 897.0
+
+[node name="Panel" type="Panel" parent="Levels"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_k8887")
+
+[node name="lvl1" type="Button" parent="Levels"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 55.0
+offset_right = 294.0
+offset_bottom = 187.0
+text = "Nivel 1"
+
+[node name="lvl2" type="Button" parent="Levels"]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 57.0
+offset_right = 517.0
+offset_bottom = 189.0
+text = "Nivel 2"
+
+[node name="lvl3" type="Button" parent="Levels"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 57.0
+offset_right = 732.0
+offset_bottom = 189.0
+text = "Nivel 3"
+
+[connection signal="pressed" from="Levels/lvl1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="Levels/lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="Levels/lvl3" to="." method="_on_lvl_3_pressed"]

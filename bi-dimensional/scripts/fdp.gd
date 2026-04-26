@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 @export var PUSH_FORCE = 50.0 # La fuerza con la que empujas la caja
-@onready var tilemap = get_parent().get_node("TileMap")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_izquierda: RayCast2D = $RayCastIzquierda
 @onready var ray_cast_derecha: RayCast2D = $RayCastDerecha
+@onready var mundo_blanco: Node2D = $"../MundoBlanco"
+@onready var mundo_negro: Node2D = $"../MundoNegro"
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 var is_dead = false
@@ -19,11 +20,15 @@ func _physics_process(delta: float) -> void:
 		change = !change
 		var anim_actual = animated_sprite_2d.animation
 		var anim = anim_actual
-
-		
 		cambiarAnim(anim)
-		tilemap.toggle_color()
-		
+		activar_mundo(mundo_blanco, !change)
+		activar_mundo(mundo_negro, change)
+			# Cambiar qué mundo "existe" para el player
+		if change:
+			collision_mask = 2
+		else:
+			collision_mask = 1
+			
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -78,7 +83,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-	for i in get_slide_collision_count():
+	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
@@ -98,7 +103,8 @@ func _physics_process(delta: float) -> void:
 func cambiarAnim(anim):
 	var frame = animated_sprite_2d.frame
 	var progreso = animated_sprite_2d.frame_progress
-	
+
+
 	animated_sprite_2d.play(anim)
 	animated_sprite_2d.frame = frame
 	animated_sprite_2d.frame_progress = progreso
@@ -114,5 +120,15 @@ func die():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	print("Animacion terminada")
 	if animated_sprite_2d.animation == "deathWhite" or animated_sprite_2d.animation =="deathBlack":
-		tilemap.resetColor()
+		activar_mundo(mundo_negro, !change)
 		get_tree().reload_current_scene()
+		
+func activar_mundo(nodo, activo):
+	if nodo is CanvasItem:
+		nodo.visible = activo
+
+	# opcional pero recomendado para rendimiento
+	nodo.process_mode = Node.PROCESS_MODE_INHERIT if activo else Node.PROCESS_MODE_DISABLED
+
+	for child in nodo.get_children():
+		activar_mundo(child, activo)	
