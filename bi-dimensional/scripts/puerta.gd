@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var sprite = $Sprite2D
+signal nivel_completado
 
 func _ready():
 	monitoring = false
@@ -15,3 +16,4 @@ func _on_body_entered(body: Node2D) -> void:
 	print("Intentando entrar")
 	if body.name == "fedeP":
 		print("Has ganado")
+		emit_signal("nivel_completado")

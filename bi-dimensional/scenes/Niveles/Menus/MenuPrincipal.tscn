@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://r04f7ttfj2ec"]
 
-[ext_resource type="Script" uid="uid://be8lsbxkiil8v" path="res://scenes/Niveles/Menus/menu_principal.gd" id="1_yx3rq"]
+[ext_resource type="Script" uid="uid://be8lsbxkiil8v" path="res://scripts/menu_principal.gd" id="1_yx3rq"]
 [ext_resource type="Texture2D" uid="uid://yrrek6nnr8fp" path="res://sprites/FondoTemporal.png" id="2_12vqk"]
 [ext_resource type="FontFile" uid="uid://dwhkbbuogd5is" path="res://TextFonts/HennyPenny-Regular.ttf" id="2_51upa"]
 
