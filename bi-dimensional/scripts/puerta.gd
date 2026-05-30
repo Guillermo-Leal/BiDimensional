@@ -11,6 +11,11 @@ func abrir_puerta():
 	sprite.texture = preload("res://sprites/puerta_abierta.png")
 	monitoring = true
 
+func cerrar_puerta():
+	print("Puerta abierta")
+	sprite.texture = preload("res://sprites/puerta_cerrada.png")
+	monitoring = false
+
 
 func _on_body_entered(body: Node2D) -> void:
 	print("Intentando entrar")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bg2ql0uxugfdx"]
+
+[ext_resource type="Texture2D" uid="uid://dowufu5r114va" path="res://sprites/boton_nopulsed_blanco.png" id="1_8vggd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sx1gk"]
+size = Vector2(30, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sokr"]
+size = Vector2(16, 7.5)
+
+[node name="RigidBody2D" type="StaticBody2D" unique_id=449995216]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=539415097]
+texture = ExtResource("1_8vggd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=384186755]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_sx1gk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2000561774]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=586611453]
+position = Vector2(0, 3.25)
+shape = SubResource("RectangleShape2D_1sokr")
