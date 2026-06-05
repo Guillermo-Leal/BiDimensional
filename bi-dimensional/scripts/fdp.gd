@@ -1,21 +1,30 @@
 extends CharacterBody2D
 
-@export var PUSH_FORCE = 50.0 # La fuerza con la que empujas la caja
+@export var PUSH_FORCE = 50.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_izquierda: RayCast2D = $RayCastIzquierda
 @onready var ray_cast_derecha: RayCast2D = $RayCastDerecha
 @onready var mundo_blanco: Node2D = $"../MundoBlanco"
 @onready var mundo_negro: Node2D = $"../MundoNegro"
+
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
+const MENU_PRINCIPAL = "res://scenes/menu_principal.tscn"  # Ajusta la ruta a tu menú
+
 var is_dead = false
 var last_direction = 1
 var change = false
+var bloqueado = false  # <-- NUEVO
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
-		
+	
+	# Si está bloqueado, detiene el personaje pero no hace nada más
+	if bloqueado:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 	if Input.is_action_just_pressed("change"):
 		change = !change
 		var anim_actual = animated_sprite_2d.animation

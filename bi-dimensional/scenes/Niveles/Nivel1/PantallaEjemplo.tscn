@@ -235,7 +235,7 @@ layer_1/tile_data = PackedInt32Array(196607, 65537, 0, 131072, 65537, 0, 131073,
 script = ExtResource("4_67ysr")
 
 [node name="Boton" parent="MundoBlanco" instance=ExtResource("9_cmnk3")]
-position = Vector2(216, 14)
+position = Vector2(217, 14)
 script = ExtResource("10_w3oww")
 
 [node name="Caja1" parent="MundoBlanco" instance=ExtResource("7_5rw4o")]
@@ -244,7 +244,7 @@ collision_layer = 1
 script = ExtResource("8_nlyxf")
 
 [node name="Caja2" parent="MundoBlanco" instance=ExtResource("7_5rw4o")]
-position = Vector2(240, -42)
+position = Vector2(237, -41)
 collision_layer = 1
 script = ExtResource("8_nlyxf")
 

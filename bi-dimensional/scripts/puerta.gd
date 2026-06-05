@@ -19,4 +19,5 @@ func _on_body_entered(body: Node2D) -> void:
 	print("Intentando entrar")
 	if body.name == "fedeP":
 		print("Has ganado")
+		body.bloqueado = true  # Bloquea el personaje
 		emit_signal("nivel_completado")
