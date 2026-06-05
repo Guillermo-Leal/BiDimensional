@@ -7,12 +7,10 @@ func _ready():
 	monitoring = false
 
 func abrir_puerta():
-	print("Puerta abierta")
 	sprite.texture = preload("res://sprites/puerta_abierta.png")
 	monitoring = true
 
 func cerrar_puerta():
-	print("Puerta abierta")
 	sprite.texture = preload("res://sprites/puerta_cerrada.png")
 	monitoring = false
 

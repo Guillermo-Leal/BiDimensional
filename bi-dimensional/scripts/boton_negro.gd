@@ -19,11 +19,9 @@ func _physics_process(delta):
 			break
 
 	if objeto_encima:
-		print("Puerta abierta")
 		sprite.texture = preload("res://sprites/boton_pulsed_negro.png")
 		door.abrir_puerta()
 	else:
-		print("Puerta cerrada")
 		sprite.texture = preload("res://sprites/boton_nopulsed_negro.png")
 		door.cerrar_puerta()
 
