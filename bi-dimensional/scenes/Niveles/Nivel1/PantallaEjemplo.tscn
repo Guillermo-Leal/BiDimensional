@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://47q3e32fv410"]
+[gd_scene load_steps=0 format=3 uid="uid://47q3e32fv410"]
 
 [ext_resource type="Script" uid="uid://c1mfoqomrc6h1" path="res://scripts/FinNivel.gd" id="1_2jpxa"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://sprites/world_tileset.png" id="2_ax8g3"]

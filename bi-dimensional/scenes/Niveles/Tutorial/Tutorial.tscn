@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://x2rgwckbpi1y" path="res://scenes/fdp.tscn" id="4_ulk4t"]
 [ext_resource type="PackedScene" uid="uid://bq16leaohb30x" path="res://scenes/llave_white.tscn" id="5_ulk4t"]
 [ext_resource type="PackedScene" uid="uid://q8212sc4duqu" path="res://scenes/puerta.tscn" id="6_dsqq0"]
-[ext_resource type="Script" uid="uid://criwn0d1vdguk" path="res://scripts/llaves.gd" id="7_t5x54"]
+[ext_resource type="Script" uid="uid://criwn0d1vdguk" path="res://scripts/llaveBlanca.gd" id="7_t5x54"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsqq0"]
 texture = ExtResource("1_vdljv")

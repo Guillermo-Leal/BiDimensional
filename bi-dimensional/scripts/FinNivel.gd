@@ -13,7 +13,3 @@ func _on_volver_pressed() -> void:
 func _on_win():
 	popup_victoria.visible = true
 	
-
-
-func _on_llave_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.

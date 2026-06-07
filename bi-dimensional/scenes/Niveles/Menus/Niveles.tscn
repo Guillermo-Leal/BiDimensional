@@ -63,8 +63,17 @@ offset_right = 935.0
 offset_bottom = 192.0
 text = "Nivel 3"
 
+[node name="lvl4" type="Button" parent="Levels"]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 216.0
+offset_right = 497.0
+offset_bottom = 348.0
+text = "Nivel 4"
+
 [connection signal="pressed" from="Levels/VolverAlMenuPrincipal" to="." method="_on_volver_al_menu_principal_pressed"]
 [connection signal="pressed" from="Levels/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Levels/lvl1" to="." method="_on_lvl_1_pressed"]
 [connection signal="pressed" from="Levels/lvl2" to="." method="_on_lvl_2_pressed"]
 [connection signal="pressed" from="Levels/lvl3" to="." method="_on_lvl_3_pressed"]
+[connection signal="pressed" from="Levels/lvl4" to="." method="_on_lvl_4_pressed"]
