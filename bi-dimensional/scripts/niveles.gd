@@ -9,7 +9,7 @@ func _on_volver_al_menu_principal_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Niveles/Menus/MenuPrincipal.tscn")
 
 func _on_lvl_1_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Niveles/Nivel1/PantallaEjemplo.tscn")
+	get_tree().change_scene_to_file("res://scenes/Niveles/Nivel1/Nivel1.tscn")
 	
 func _on_lvl_2_pressed() -> void:
 	print("WIP")
