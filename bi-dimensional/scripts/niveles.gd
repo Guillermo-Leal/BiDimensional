@@ -12,7 +12,7 @@ func _on_lvl_1_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Niveles/Nivel1/Nivel1.tscn")
 	
 func _on_lvl_2_pressed() -> void:
-	print("WIP")
+	get_tree().change_scene_to_file("res://scenes/Niveles/Nivel2/Nivel2.tscn")
 
 func _on_lvl_3_pressed() -> void:
 	print("WIP")
