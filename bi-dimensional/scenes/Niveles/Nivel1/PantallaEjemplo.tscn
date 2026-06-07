@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bmt4i0bpmxhj4"]
+[gd_scene format=3 uid="uid://47q3e32fv410"]
 
 [ext_resource type="Script" uid="uid://c1mfoqomrc6h1" path="res://scripts/FinNivel.gd" id="1_2jpxa"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://sprites/world_tileset.png" id="2_ax8g3"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cetiqapmk3msg" path="res://scenes/pincho.tscn" id="6_gfd3w"]
 [ext_resource type="PackedScene" uid="uid://lv6ll5ekh7e0" path="res://scenes/cajaBlanca.tscn" id="7_5rw4o"]
 [ext_resource type="Script" uid="uid://cccg7k80whbcj" path="res://scripts/caja.gd" id="8_nlyxf"]
-[ext_resource type="PackedScene" uid="uid://bfxm47xqsnluo" path="res://scenes/cajaNegra.tscn" id="9_1dhtk"]
+[ext_resource type="PackedScene" uid="uid://dfcubhc2t5g7g" path="res://scenes/cajaNegra.tscn" id="9_1dhtk"]
 [ext_resource type="PackedScene" uid="uid://x2rgwckbpi1y" path="res://scenes/fdp.tscn" id="9_18wdq"]
 [ext_resource type="PackedScene" uid="uid://bq16leaohb30x" path="res://scenes/llave_white.tscn" id="10_ckdb8"]
 [ext_resource type="Script" uid="uid://criwn0d1vdguk" path="res://scripts/llaves.gd" id="11_ot6wy"]
@@ -210,14 +210,10 @@ script = ExtResource("4_67ysr")
 
 [node name="Caja1" parent="MundoNegro" unique_id=1605658529 instance=ExtResource("9_1dhtk")]
 position = Vector2(239, -58)
-collision_layer = 2
-collision_mask = 2
 script = ExtResource("8_nlyxf")
 
 [node name="Caja2" parent="MundoNegro" unique_id=1989693460 instance=ExtResource("9_1dhtk")]
 position = Vector2(204, -90)
-collision_layer = 2
-collision_mask = 2
 script = ExtResource("8_nlyxf")
 
 [node name="Pincho4" parent="MundoNegro" unique_id=135561653 instance=ExtResource("6_gfd3w")]
