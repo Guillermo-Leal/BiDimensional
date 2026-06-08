@@ -1,16 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://r04f7ttfj2ec"]
+[gd_scene format=3 uid="uid://r04f7ttfj2ec"]
 
 [ext_resource type="Script" uid="uid://be8lsbxkiil8v" path="res://scripts/menu_principal.gd" id="1_yx3rq"]
 [ext_resource type="Texture2D" uid="uid://yrrek6nnr8fp" path="res://sprites/FondoTemporal.png" id="2_12vqk"]
-[ext_resource type="FontFile" uid="uid://dwhkbbuogd5is" path="res://TextFonts/HennyPenny-Regular.ttf" id="2_51upa"]
+[ext_resource type="Texture2D" uid="uid://86xqg3s6osqf" path="res://sprites/startUnhover.png" id="3_8x160"]
+[ext_resource type="Texture2D" uid="uid://bc7erntv1cwi4" path="res://sprites/startHover.png" id="4_5r4x4"]
+[ext_resource type="Texture2D" uid="uid://bnha7hk8dmene" path="res://sprites/opcionesUnhover.png" id="4_exmlw"]
+[ext_resource type="Texture2D" uid="uid://b88q71sp2db71" path="res://sprites/opcionesHover.png" id="5_5r4x4"]
+[ext_resource type="Texture2D" uid="uid://tr8fcuqjo7ao" path="res://sprites/salirUnhover.png" id="6_kf14w"]
+[ext_resource type="Texture2D" uid="uid://byd1haj70y2g5" path="res://sprites/salirHover.png" id="7_dh1jm"]
+[ext_resource type="Texture2D" uid="uid://ce4m8gwysw8kx" path="res://sprites/TitleScreen.png" id="9_kf14w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ev2af"]
 texture = ExtResource("2_12vqk")
 
-[node name="MenuPrincipal" type="Node2D"]
+[node name="MenuPrincipal" type="Node2D" unique_id=511149820]
 script = ExtResource("1_yx3rq")
 
-[node name="ButtonManager" type="Control" parent="."]
+[node name="ButtonManager" type="Control" parent="." unique_id=1670333589]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -2.0
@@ -18,7 +24,7 @@ offset_top = -2.0
 offset_right = 1044.0
 offset_bottom = 897.0
 
-[node name="Panel" type="Panel" parent="ButtonManager"]
+[node name="Panel" type="Panel" parent="ButtonManager" unique_id=1677887283]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,46 +33,39 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ev2af")
 
-[node name="Start" type="Button" parent="ButtonManager"]
+[node name="Start" type="TextureButton" parent="ButtonManager" unique_id=1674390845]
 layout_mode = 0
-offset_left = 393.0
-offset_top = 221.0
-offset_right = 657.0
-offset_bottom = 372.0
-theme_override_fonts/font = ExtResource("2_51upa")
-text = "Start
-"
+offset_left = 705.0
+offset_top = 327.0
+offset_right = 955.0
+offset_bottom = 477.0
+texture_normal = ExtResource("3_8x160")
+texture_hover = ExtResource("4_5r4x4")
 
-[node name="Options" type="Button" parent="ButtonManager"]
+[node name="Options" type="TextureButton" parent="ButtonManager" unique_id=813509696]
 layout_mode = 0
-offset_left = 395.0
-offset_top = 402.0
-offset_right = 659.0
-offset_bottom = 541.0
-theme_override_fonts/font = ExtResource("2_51upa")
-text = "Options
-"
+offset_left = 705.0
+offset_top = 633.0
+offset_right = 969.0
+offset_bottom = 783.0
+texture_normal = ExtResource("4_exmlw")
+texture_hover = ExtResource("5_5r4x4")
 
-[node name="Quit" type="Button" parent="ButtonManager"]
+[node name="Quit" type="TextureButton" parent="ButtonManager" unique_id=657690855]
 layout_mode = 0
-offset_left = 397.0
-offset_top = 567.0
-offset_right = 658.0
-offset_bottom = 696.0
-theme_override_fonts/font = ExtResource("2_51upa")
-text = "Quit
-"
+offset_left = 705.0
+offset_top = 480.0
+offset_right = 955.0
+offset_bottom = 630.0
+texture_normal = ExtResource("6_kf14w")
+texture_hover = ExtResource("7_dh1jm")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 287.0
-offset_top = 85.0
-offset_right = 748.0
-offset_bottom = 205.0
-theme_override_fonts/font = ExtResource("2_51upa")
-theme_override_font_sizes/font_size = 67
-text = "Bi-Dimensional"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="TextureRect" type="TextureRect" parent="." unique_id=398677119]
+offset_left = 20.0
+offset_top = 99.0
+offset_right = 779.0
+offset_bottom = 196.0
+texture = ExtResource("9_kf14w")
 
 [connection signal="pressed" from="ButtonManager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ButtonManager/Options" to="." method="_on_options_pressed"]

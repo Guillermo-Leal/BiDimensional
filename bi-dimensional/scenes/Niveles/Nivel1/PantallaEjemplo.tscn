@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://47q3e32fv410"]
+[gd_scene format=3 uid="uid://47q3e32fv410"]
 
 [ext_resource type="Script" uid="uid://c1mfoqomrc6h1" path="res://scripts/FinNivel.gd" id="1_2jpxa"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://sprites/world_tileset.png" id="2_ax8g3"]
@@ -10,8 +10,8 @@
 [ext_resource type="Script" uid="uid://cccg7k80whbcj" path="res://scripts/caja.gd" id="8_nlyxf"]
 [ext_resource type="PackedScene" uid="uid://dfcubhc2t5g7g" path="res://scenes/cajaNegra.tscn" id="9_1dhtk"]
 [ext_resource type="PackedScene" uid="uid://x2rgwckbpi1y" path="res://scenes/fdp.tscn" id="9_18wdq"]
+[ext_resource type="Script" path="res://scripts/llaveBlanca.gd" id="10_2jpxa"]
 [ext_resource type="PackedScene" uid="uid://bq16leaohb30x" path="res://scenes/llave_white.tscn" id="10_ckdb8"]
-[ext_resource type="Script" uid="uid://criwn0d1vdguk" path="res://scripts/llaves.gd" id="11_ot6wy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5t37d"]
 texture = ExtResource("2_ax8g3")
@@ -247,7 +247,7 @@ script = ExtResource("8_nlyxf")
 [node name="Llave" parent="MundoBlanco" unique_id=314423283 instance=ExtResource("10_ckdb8")]
 position = Vector2(91, -128)
 collision_layer = 1
-script = ExtResource("11_ot6wy")
+script = ExtResource("10_2jpxa")
 
 [node name="Puerta" parent="MundoBlanco" unique_id=2028053248 instance=ExtResource("5_2be33")]
 position = Vector2(287, -194)
