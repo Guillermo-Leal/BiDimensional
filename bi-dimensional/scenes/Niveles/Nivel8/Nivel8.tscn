@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bo02pa047kxpv" path="res://sounds/level.mp3" id="10_f8cht"]
 [ext_resource type="AudioStream" uid="uid://c1lqyv7r7gig3" path="res://sounds/opendoor.mp3" id="11_io11q"]
 [ext_resource type="AudioStream" uid="uid://cm5bo4v2dnai1" path="res://sounds/death.mp3" id="12_v2hhu"]
-[ext_resource type="PackedScene" uid="uid://x8vh7uvkry77" path="res://scenes/menu_pausa.tscn" id="13_mvjvy"]
+[ext_resource type="PackedScene" path="res://scenes/Niveles/Menus/menu_pausa.tscn" id="13_mvjvy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsqq0"]
 texture = ExtResource("2_mvjvy")
