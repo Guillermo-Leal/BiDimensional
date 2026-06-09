@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjtmw6rt7lbia"]
+[gd_scene format=3 uid="uid://bjtmw6rt7lbia"]
 
 [ext_resource type="Script" uid="uid://bla4f4ifd7uti" path="res://scripts/ajustes.gd" id="1_7ihag"]
 [ext_resource type="PackedScene" uid="uid://cxji7cu15jp8k" path="res://scenes/Volumen.tscn" id="2_g7iwe"]
 [ext_resource type="PackedScene" uid="uid://dmctxqy3nc15b" path="res://scenes/BrightnessSlider.tscn" id="3_g7iwe"]
 [ext_resource type="Texture2D" uid="uid://bq6ftlhvp2nb" path="res://sprites/returnToMenuUnhover.png" id="3_knt17"]
 [ext_resource type="Texture2D" uid="uid://devq2l175gv3j" path="res://sprites/returnToMenuHover.png" id="4_0p4lp"]
-[ext_resource type="Script" uid="uid://8v3jbs7os8un" path="res://scripts/borrarDatos.gd" id="6_knt17"]
+[ext_resource type="Texture2D" uid="uid://c3s1unp38vnk4" path="res://sprites/resetProgUnhover.png" id="6_do2gv"]
+[ext_resource type="Texture2D" uid="uid://dgxkcjbpxkhu8" path="res://sprites/resetProgHover.png" id="7_ucl6i"]
 
-[node name="Opciones" type="Control"]
+[node name="Opciones" type="Control" unique_id=1771765586]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7ihag")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1158163923]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -30,25 +31,25 @@ offset_bottom = 154.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=91827942]
 layout_mode = 2
 
-[node name="Volume" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_g7iwe")]
+[node name="Volume" parent="MarginContainer/VBoxContainer" unique_id=1103876834 instance=ExtResource("2_g7iwe")]
 layout_mode = 2
 value = 0.5
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=74421933]
 layout_mode = 2
 text = "Volumen"
 
-[node name="Control" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_g7iwe")]
+[node name="Control" parent="MarginContainer/VBoxContainer" unique_id=300601421 instance=ExtResource("3_g7iwe")]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=905810113]
 layout_mode = 2
 text = "Brillo"
 
-[node name="VolverAlMenuPrincipal" type="TextureButton" parent="."]
+[node name="VolverAlMenuPrincipal" type="TextureButton" parent="." unique_id=777385126]
 layout_mode = 0
 offset_left = 572.0
 offset_top = 642.0
@@ -57,16 +58,14 @@ offset_bottom = 742.0
 texture_normal = ExtResource("3_knt17")
 texture_hover = ExtResource("4_0p4lp")
 
-[node name="VolverAlMenuPrincipal2" type="TextureButton" parent="."]
+[node name="ResetProg" type="TextureButton" parent="." unique_id=1437964054]
 layout_mode = 0
-offset_left = 381.0
-offset_top = 738.0
-offset_right = 481.0
-offset_bottom = 838.0
-rotation = -3.1196103
-texture_normal = ExtResource("3_knt17")
-texture_hover = ExtResource("4_0p4lp")
-script = ExtResource("6_knt17")
+offset_left = 341.0
+offset_top = 642.0
+offset_right = 441.0
+offset_bottom = 742.0
+texture_normal = ExtResource("6_do2gv")
+texture_hover = ExtResource("7_ucl6i")
 
 [connection signal="pressed" from="VolverAlMenuPrincipal" to="." method="_on_volver_al_menu_principal_pressed"]
-[connection signal="pressed" from="VolverAlMenuPrincipal2" to="." method="_on_volver_al_menu_principal_2_pressed"]
+[connection signal="pressed" from="ResetProg" to="." method="_on_reset_prog_pressed"]

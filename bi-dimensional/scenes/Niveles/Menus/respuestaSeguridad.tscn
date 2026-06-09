@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://chgbq86h1we1u"]
+
+[ext_resource type="Script" uid="uid://djq8rdrcii8cd" path="res://scenes/Niveles/Menus/respuestaReset.gd" id="1_cfxc0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyalo"]
+
+[node name="RespuestaSeguridad" type="Node2D" unique_id=760656236]
+
+[node name="Panel" type="Panel" parent="." unique_id=983927800]
+theme_override_styles/panel = SubResource("StyleBoxTexture_oyalo")
+
+[node name="Label" type="Label" parent="." unique_id=1369399547]
+offset_left = 305.0
+offset_top = 311.0
+offset_right = 731.0
+offset_bottom = 334.0
+text = "Estás seguro/a? Esta acción reiniciará todo tu progreso."
+
+[node name="respuestaSi" type="Button" parent="Label" unique_id=366363007]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 148.0
+offset_right = 160.0
+offset_bottom = 243.0
+text = "Sí"
+
+[node name="respuestaNo" type="Button" parent="Label" unique_id=732057291]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 148.0
+offset_right = 426.0
+offset_bottom = 243.0
+text = "No"
+script = ExtResource("1_cfxc0")
+
+[connection signal="pressed" from="Label/respuestaSi" to="Label/respuestaNo" method="_on_respuesta_si_pressed"]
+[connection signal="pressed" from="Label/respuestaNo" to="Label/respuestaNo" method="_on_respuesta_no_pressed"]
