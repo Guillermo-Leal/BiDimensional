@@ -1,19 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://01oscy33aeu"]
+[gd_scene format=3 uid="uid://01oscy33aeu"]
 
 [ext_resource type="Script" uid="uid://dapthmolcnw0m" path="res://scripts/niveles.gd" id="1_0m1ny"]
+[ext_resource type="Texture2D" uid="uid://bq6ftlhvp2nb" path="res://sprites/returnToMenuUnhover.png" id="2_oo7i4"]
+[ext_resource type="Texture2D" uid="uid://devq2l175gv3j" path="res://sprites/returnToMenuHover.png" id="3_6ebsq"]
+[ext_resource type="Texture2D" uid="uid://b1h8lho4c8s08" path="res://sprites/TutorialUnhover.png" id="4_4gnn4"]
+[ext_resource type="Texture2D" uid="uid://drqacpwdk7df" path="res://sprites/TutorialHover.png" id="5_xmxqt"]
+[ext_resource type="Texture2D" uid="uid://byypdqnvlpok3" path="res://sprites/level1Unhover.png" id="6_g4ldw"]
+[ext_resource type="Texture2D" uid="uid://cpp461eqdiv0j" path="res://sprites/level1Hover.png" id="7_0pg5o"]
+[ext_resource type="Texture2D" uid="uid://c7qnw5b5iidiu" path="res://sprites/level2Unhover.png" id="8_onwf0"]
+[ext_resource type="Texture2D" uid="uid://b6r420o51cx7v" path="res://sprites/level2Hover.png" id="9_v8wdo"]
+[ext_resource type="Texture2D" uid="uid://db4kbwcfrdw06" path="res://sprites/level3Unhover.png" id="10_4v3t7"]
+[ext_resource type="Texture2D" uid="uid://be2t188rc3tnn" path="res://sprites/level3Hover.png" id="11_y6i7p"]
+[ext_resource type="Texture2D" uid="uid://cmak74a85iumo" path="res://sprites/level4Unhover.png" id="12_f00fr"]
+[ext_resource type="Texture2D" uid="uid://j2glddwgrxsb" path="res://sprites/level4Hover.png" id="13_n17gj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k8887"]
 
-[node name="Niveles" type="Node2D"]
+[node name="Niveles" type="Node2D" unique_id=129321596]
 script = ExtResource("1_0m1ny")
 
-[node name="Levels" type="Control" parent="."]
+[node name="Levels" type="Control" parent="." unique_id=1261441258]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1046.0
 offset_bottom = 897.0
 
-[node name="Panel" type="Panel" parent="Levels"]
+[node name="Panel" type="Panel" parent="Levels" unique_id=199107877]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,54 +34,59 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_k8887")
 
-[node name="VolverAlMenuPrincipal" type="Button" parent="Levels"]
+[node name="VolverAlMenuPrincipal" type="TextureButton" parent="Levels" unique_id=1201449516]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 713.0
-offset_right = 631.0
-offset_bottom = 845.0
-text = "Volver al menu principal"
+offset_left = 478.0
+offset_top = 775.0
+offset_right = 578.0
+offset_bottom = 875.0
+texture_normal = ExtResource("2_oo7i4")
+texture_hover = ExtResource("3_6ebsq")
 
-[node name="Tutorial" type="Button" parent="Levels"]
+[node name="Tutorial" type="TextureButton" parent="Levels" unique_id=210201818]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 58.0
-offset_right = 268.0
-offset_bottom = 190.0
-text = "Tutorial
-"
+offset_left = 21.0
+offset_top = 59.0
+offset_right = 220.0
+offset_bottom = 191.0
+texture_normal = ExtResource("4_4gnn4")
+texture_hover = ExtResource("5_xmxqt")
 
-[node name="lvl1" type="Button" parent="Levels"]
+[node name="lvl1" type="TextureButton" parent="Levels" unique_id=101314616]
 layout_mode = 0
-offset_left = 298.0
-offset_top = 58.0
-offset_right = 497.0
-offset_bottom = 190.0
-text = "Nivel 1"
+offset_left = 277.0
+offset_top = 59.0
+offset_right = 527.0
+offset_bottom = 209.0
+texture_normal = ExtResource("6_g4ldw")
+texture_hover = ExtResource("7_0pg5o")
 
-[node name="lvl2" type="Button" parent="Levels"]
+[node name="lvl2" type="TextureButton" parent="Levels" unique_id=2004233683]
 layout_mode = 0
-offset_left = 521.0
-offset_top = 60.0
-offset_right = 720.0
-offset_bottom = 192.0
-text = "Nivel 2"
+offset_left = 533.0
+offset_top = 59.0
+offset_right = 783.0
+offset_bottom = 209.0
+texture_normal = ExtResource("8_onwf0")
+texture_hover = ExtResource("9_v8wdo")
 
-[node name="lvl3" type="Button" parent="Levels"]
+[node name="lvl3" type="TextureButton" parent="Levels" unique_id=1407193517]
 layout_mode = 0
-offset_left = 736.0
-offset_top = 60.0
-offset_right = 935.0
-offset_bottom = 192.0
-text = "Nivel 3"
+offset_left = 789.0
+offset_top = 59.0
+offset_right = 1039.0
+offset_bottom = 209.0
+texture_normal = ExtResource("10_4v3t7")
+texture_hover = ExtResource("11_y6i7p")
 
-[node name="lvl4" type="Button" parent="Levels"]
+[node name="lvl4" type="TextureButton" parent="Levels" unique_id=2069843041]
 layout_mode = 0
-offset_left = 298.0
-offset_top = 216.0
-offset_right = 497.0
-offset_bottom = 348.0
-text = "Nivel 4"
+offset_left = 277.0
+offset_top = 215.0
+offset_right = 527.0
+offset_bottom = 365.0
+texture_normal = ExtResource("12_f00fr")
+texture_hover = ExtResource("13_n17gj")
 
 [connection signal="pressed" from="Levels/VolverAlMenuPrincipal" to="." method="_on_volver_al_menu_principal_pressed"]
 [connection signal="pressed" from="Levels/Tutorial" to="." method="_on_tutorial_pressed"]
