@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var ray_cast_derecha: RayCast2D = $RayCastDerecha
 @onready var mundo_blanco: Node2D = $"../MundoBlanco"
 @onready var mundo_negro: Node2D = $"../MundoNegro"
+@onready var muerte = $"../DeathSFX"
+@onready var nivel = $"../LevelMusic"
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
@@ -125,6 +127,8 @@ func die():
 		animated_sprite_2d.play("deathWhite")
 	else:
 		animated_sprite_2d.play("deathBlack")
+	nivel.stop()
+	muerte.play()
 	
 func _on_animated_sprite_2d_animation_finished() -> void:
 	print("Animacion terminada")

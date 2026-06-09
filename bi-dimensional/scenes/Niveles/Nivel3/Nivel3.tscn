@@ -7,8 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://dfcubhc2t5g7g" path="res://scenes/cajaNegra.tscn" id="5_5px2d"]
 [ext_resource type="PackedScene" uid="uid://cc50oh2yo5ros" path="res://scenes/botonNegro.tscn" id="6_3y37w"]
 [ext_resource type="PackedScene" uid="uid://q8212sc4duqu" path="res://scenes/puerta.tscn" id="8_lc0fd"]
+[ext_resource type="AudioStream" uid="uid://bo02pa047kxpv" path="res://sounds/level.mp3" id="10_nriip"]
 [ext_resource type="PackedScene" uid="uid://cetiqapmk3msg" path="res://scenes/pincho.tscn" id="10_t35d5"]
 [ext_resource type="PackedScene" uid="uid://x2rgwckbpi1y" path="res://scenes/fdp.tscn" id="10_ux6yk"]
+[ext_resource type="AudioStream" uid="uid://c1lqyv7r7gig3" path="res://sounds/opendoor.mp3" id="11_8nigh"]
+[ext_resource type="AudioStream" uid="uid://cm5bo4v2dnai1" path="res://sounds/death.mp3" id="12_njwsv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsqq0"]
 texture = ExtResource("2_tg573")
@@ -299,5 +302,17 @@ offset_top = 431.0
 offset_right = 602.0
 offset_bottom = 526.0
 text = "Volver al menu"
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=57210101]
+stream = ExtResource("10_nriip")
+volume_db = -10.0
+
+[node name="OpenDoor" type="AudioStreamPlayer" parent="." unique_id=1978247170]
+stream = ExtResource("11_8nigh")
+volume_db = -10.0
+
+[node name="DeathSFX" type="AudioStreamPlayer" parent="." unique_id=920453068]
+stream = ExtResource("12_njwsv")
+volume_db = -10.0
 
 [connection signal="pressed" from="Canvaslayer/PopupVictoria/Panel/Volver" to="." method="_on_volver_pressed"]

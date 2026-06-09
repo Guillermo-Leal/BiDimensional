@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var abrirpuerta = $"../../OpenDoor"
 @onready var sprite = $Sprite2D
 signal nivel_completado
 
@@ -8,6 +9,7 @@ func _ready():
 
 func abrir_puerta():
 	sprite.texture = preload("res://sprites/puerta_abierta.png")
+	abrirpuerta.play()
 	monitoring = true
 
 func cerrar_puerta():
