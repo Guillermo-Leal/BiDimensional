@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b52m6dw3gfbco"]
+
+[ext_resource type="Script" uid="uid://7u23ajietdqu" path="res://scripts/creditos.gd" id="1_16xuf"]
+[ext_resource type="Texture2D" uid="uid://bq6ftlhvp2nb" path="res://sprites/returnToMenuUnhover.png" id="1_qxx65"]
+[ext_resource type="Texture2D" uid="uid://devq2l175gv3j" path="res://sprites/returnToMenuHover.png" id="2_16xuf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_688gp"]
+
+[node name="Creditos" type="Node2D" unique_id=1409995796]
+script = ExtResource("1_16xuf")
+
+[node name="VolverAlMenuPrincipal" type="TextureButton" parent="." unique_id=1619874073]
+offset_left = 916.0
+offset_top = 767.0
+offset_right = 1016.0
+offset_bottom = 867.0
+texture_normal = ExtResource("1_qxx65")
+texture_hover = ExtResource("2_16xuf")
+
+[node name="Panel" type="Panel" parent="." unique_id=1944534342]
+theme_override_styles/panel = SubResource("StyleBoxTexture_688gp")
+
+[node name="Label" type="Label" parent="." unique_id=844646769]
+offset_right = 1045.0
+offset_bottom = 896.0
+text = "Bi-Dimensional:
+
+
+Juego hecho por: Guillermo Leal Jiménez y Sergio de la Rubia.
+
+
+Música utilizada para los niveles: Zambolino (Free to use).
+
+Efectos de sonido:
+- Puerta: Lolo_s (Pixabay).
+- Muerte: Lumora_Studios (Pixabay).
+
+Github:
+@SpringIsKTho
+@Guillermo-Leal
+
+Controles:
+
+Moverse: Flechas de dirección.
+Saltar: Barra espaciadora.
+Cambio de dimensión: Tecla C
+
+Las cajas utilizan físicas para su empuje, es importante aplicar la fuerza exacta para que no se se pasen al caer."
+
+[connection signal="pressed" from="VolverAlMenuPrincipal" to="." method="_on_volver_al_menu_principal_pressed"]

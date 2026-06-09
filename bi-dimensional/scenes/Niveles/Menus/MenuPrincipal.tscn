@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://b88q71sp2db71" path="res://sprites/opcionesHover.png" id="5_5r4x4"]
 [ext_resource type="Texture2D" uid="uid://tr8fcuqjo7ao" path="res://sprites/salirUnhover.png" id="6_kf14w"]
 [ext_resource type="Texture2D" uid="uid://byd1haj70y2g5" path="res://sprites/salirHover.png" id="7_dh1jm"]
+[ext_resource type="Texture2D" uid="uid://ii1mfx06qppg" path="res://sprites/InfoUnhover.png" id="7_kf14w"]
+[ext_resource type="Texture2D" uid="uid://bfrqekge885y4" path="res://sprites/InfoHover.png" id="8_dh1jm"]
 [ext_resource type="Texture2D" uid="uid://ce4m8gwysw8kx" path="res://sprites/TitleScreen.png" id="9_kf14w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ev2af"]
@@ -51,6 +53,15 @@ offset_bottom = 783.0
 texture_normal = ExtResource("4_exmlw")
 texture_hover = ExtResource("5_5r4x4")
 
+[node name="Info" type="TextureButton" parent="ButtonManager" unique_id=1178200947]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 771.0
+offset_right = 127.0
+offset_bottom = 871.0
+texture_normal = ExtResource("7_kf14w")
+texture_hover = ExtResource("8_dh1jm")
+
 [node name="Quit" type="TextureButton" parent="ButtonManager" unique_id=657690855]
 layout_mode = 0
 offset_left = 705.0
@@ -69,4 +80,5 @@ texture = ExtResource("9_kf14w")
 
 [connection signal="pressed" from="ButtonManager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ButtonManager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ButtonManager/Info" to="." method="_on_info_pressed"]
 [connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]
