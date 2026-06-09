@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://chgbq86h1we1u"]
 
-[ext_resource type="Script" uid="uid://djq8rdrcii8cd" path="res://scenes/Niveles/Menus/respuestaReset.gd" id="1_cfxc0"]
+[ext_resource type="Script" uid="uid://djq8rdrcii8cd" path="res://scripts/respuestaReset.gd" id="1_cfxc0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyalo"]
 
