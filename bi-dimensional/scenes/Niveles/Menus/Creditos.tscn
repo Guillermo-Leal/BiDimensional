@@ -44,6 +44,7 @@ Controles:
 Moverse: Flechas de dirección.
 Saltar: Barra espaciadora.
 Cambio de dimensión: Tecla C
+Pausa: Tecla Esc
 
 Las cajas utilizan físicas para su empuje, es importante aplicar la fuerza exacta para que no se se pasen al caer."
 

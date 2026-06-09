@@ -1,16 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://x8vh7uvkry77"]
+[gd_scene format=3 uid="uid://x8vh7uvkry77"]
 
-[ext_resource type="Script" uid="uid://cmyyaxasqw1nl" path="res://scripts/menu_pausa.gd" id="1_1cdjc"]
+[ext_resource type="Script" path="res://scripts/menu_pausa.gd" id="1_1cdjc"]
 [ext_resource type="Texture2D" uid="uid://bq6ftlhvp2nb" path="res://sprites/returnToMenuUnhover.png" id="2_ajpfe"]
 [ext_resource type="Texture2D" uid="uid://dg7cow87w8hvf" path="res://sprites/resumeUnhover.png" id="2_iivcj"]
 [ext_resource type="Texture2D" uid="uid://ctd4a4vgukphx" path="res://sprites/resumeHover.png" id="3_8ryx1"]
 [ext_resource type="Texture2D" uid="uid://devq2l175gv3j" path="res://sprites/returnToMenuHover.png" id="3_iivcj"]
 
-[node name="MenuPausa" type="CanvasLayer"]
+[node name="MenuPausa" type="CanvasLayer" unique_id=501075979]
 process_mode = 3
 script = ExtResource("1_1cdjc")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1306386912]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,7 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="Panel" parent="Control" unique_id=1401086529]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,33 +26,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Continuar" type="TextureButton" parent="Control/Panel"]
+[node name="Continuar" type="TextureButton" parent="Control/Panel" unique_id=1649526536]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = -160.5
-offset_right = 48.0
-offset_bottom = -60.5
+offset_left = -50.0
+offset_top = -175.5
+offset_right = 50.0
+offset_bottom = -75.5
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("2_iivcj")
 texture_hover = ExtResource("3_8ryx1")
 
-[node name="VolverAlMenuPrincipal" type="TextureButton" parent="Control/Panel"]
+[node name="VolverAlMenuPrincipal" type="TextureButton" parent="Control/Panel" unique_id=1283133335]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = 70.5
-offset_right = 52.0
-offset_bottom = 170.5
+offset_left = -50.0
+offset_top = 75.5
+offset_right = 50.0
+offset_bottom = 175.5
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("2_ajpfe")
