@@ -14,6 +14,14 @@
 [ext_resource type="Texture2D" uid="uid://be2t188rc3tnn" path="res://sprites/level3Hover.png" id="11_y6i7p"]
 [ext_resource type="Texture2D" uid="uid://cmak74a85iumo" path="res://sprites/level4Unhover.png" id="12_f00fr"]
 [ext_resource type="Texture2D" uid="uid://j2glddwgrxsb" path="res://sprites/level4Hover.png" id="13_n17gj"]
+[ext_resource type="Texture2D" uid="uid://dwgfklbcn2ihq" path="res://sprites/level5Unhover.png" id="15_y6i7p"]
+[ext_resource type="Texture2D" uid="uid://b7336jq6vbca" path="res://sprites/level5Hover.png" id="16_f00fr"]
+[ext_resource type="Texture2D" uid="uid://21qxfg8jlftw" path="res://sprites/level6Unhover.png" id="17_n17gj"]
+[ext_resource type="Texture2D" uid="uid://dsxw13n8duodj" path="res://sprites/level6Hover.png" id="18_rg04f"]
+[ext_resource type="Texture2D" uid="uid://dxv7k35tg8ekn" path="res://sprites/level7Unhover.png" id="19_evooq"]
+[ext_resource type="Texture2D" uid="uid://krgl1kv2yvkj" path="res://sprites/level7Hover.png" id="20_43lkp"]
+[ext_resource type="Texture2D" uid="uid://kcjrde1ge4ms" path="res://sprites/level8Unhover.png" id="21_nkw1l"]
+[ext_resource type="Texture2D" uid="uid://bhwm0ou40h5k5" path="res://sprites/level8Hover.png" id="22_acd8q"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k8887"]
 
@@ -134,9 +142,85 @@ offset_right = 249.0
 offset_bottom = 45.0
 texture = ExtResource("6_6ebsq")
 
+[node name="lvl5" type="TextureButton" parent="Levels" unique_id=1380621857]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 215.0
+offset_right = 783.0
+offset_bottom = 365.0
+texture_normal = ExtResource("15_y6i7p")
+texture_hover = ExtResource("16_f00fr")
+
+[node name="nivel5_completado" type="TextureRect" parent="Levels/lvl5" unique_id=601677148]
+visible = false
+layout_mode = 0
+offset_left = 201.0
+offset_top = 1.0
+offset_right = 249.0
+offset_bottom = 45.0
+texture = ExtResource("6_6ebsq")
+
+[node name="lvl6" type="TextureButton" parent="Levels" unique_id=2081929739]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 215.0
+offset_right = 1039.0
+offset_bottom = 365.0
+texture_normal = ExtResource("17_n17gj")
+texture_hover = ExtResource("18_rg04f")
+
+[node name="nivel6_completado" type="TextureRect" parent="Levels/lvl6" unique_id=523443362]
+visible = false
+layout_mode = 0
+offset_left = 201.0
+offset_top = 1.0
+offset_right = 249.0
+offset_bottom = 45.0
+texture = ExtResource("6_6ebsq")
+
+[node name="lvl7" type="TextureButton" parent="Levels" unique_id=1990812749]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 371.0
+offset_right = 527.0
+offset_bottom = 521.0
+texture_normal = ExtResource("19_evooq")
+texture_hover = ExtResource("20_43lkp")
+
+[node name="nivel7_completado" type="TextureRect" parent="Levels/lvl7" unique_id=63819318]
+visible = false
+layout_mode = 0
+offset_left = 201.0
+offset_top = 1.0
+offset_right = 249.0
+offset_bottom = 45.0
+texture = ExtResource("6_6ebsq")
+
+[node name="lvl8" type="TextureButton" parent="Levels" unique_id=371975129]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 371.0
+offset_right = 783.0
+offset_bottom = 521.0
+texture_normal = ExtResource("21_nkw1l")
+texture_hover = ExtResource("22_acd8q")
+
+[node name="nivel8_completado" type="TextureRect" parent="Levels/lvl8" unique_id=41495769]
+visible = false
+layout_mode = 0
+offset_left = 201.0
+offset_top = 1.0
+offset_right = 249.0
+offset_bottom = 45.0
+texture = ExtResource("6_6ebsq")
+
 [connection signal="pressed" from="Levels/VolverAlMenuPrincipal" to="." method="_on_volver_al_menu_principal_pressed"]
 [connection signal="pressed" from="Levels/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Levels/lvl1" to="." method="_on_lvl_1_pressed"]
 [connection signal="pressed" from="Levels/lvl2" to="." method="_on_lvl_2_pressed"]
 [connection signal="pressed" from="Levels/lvl3" to="." method="_on_lvl_3_pressed"]
 [connection signal="pressed" from="Levels/lvl4" to="." method="_on_lvl_4_pressed"]
+[connection signal="pressed" from="Levels/lvl5" to="." method="_on_lvl_5_pressed"]
+[connection signal="pressed" from="Levels/lvl6" to="." method="_on_lvl_6_pressed"]
+[connection signal="pressed" from="Levels/lvl7" to="." method="_on_lvl_7_pressed"]
+[connection signal="pressed" from="Levels/lvl8" to="." method="_on_lvl_8_pressed"]
