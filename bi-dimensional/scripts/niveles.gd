@@ -1,6 +1,9 @@
 extends Node2D
 
+@onready var tutorial_completado: TextureRect = $Levels/Tutorial/tutorial_completado
 
+func _ready()->void:
+	tutorial_completado.visible = SaveManager.is_level_completed("res://scenes/Niveles/Tutorial/Tutorial.tscn")
 
 func _on_tutorial_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Niveles/Tutorial/Tutorial.tscn")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dmctxqy3nc15b"]
 
-[ext_resource type="Script" uid="uid://bk400ybrmheyi" path="res://scenes/Brightness.gd" id="1_sewru"]
+[ext_resource type="Script" uid="uid://bk400ybrmheyi" path="res://scripts/Brightness.gd" id="1_sewru"]
 
 [node name="Brightness" type="HSlider"]
 anchors_preset = 15

@@ -8,3 +8,8 @@ func _ready() -> void:
 
 func _on_volver_al_menu_principal_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Niveles/Menus/MenuPrincipal.tscn")
+
+
+func _on_volver_al_menu_principal_2_pressed() -> void:
+	SaveManager.save_data = {}
+	SaveManager.save_data_to_file()

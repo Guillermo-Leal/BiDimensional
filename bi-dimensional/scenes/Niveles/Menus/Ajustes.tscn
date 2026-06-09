@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjtmw6rt7lbia"]
+[gd_scene load_steps=7 format=3 uid="uid://bjtmw6rt7lbia"]
 
-[ext_resource type="Script" uid="uid://bla4f4ifd7uti" path="res://scenes/ajustes.gd" id="1_7ihag"]
+[ext_resource type="Script" uid="uid://bla4f4ifd7uti" path="res://scripts/ajustes.gd" id="1_7ihag"]
 [ext_resource type="PackedScene" uid="uid://cxji7cu15jp8k" path="res://scenes/Volumen.tscn" id="2_g7iwe"]
 [ext_resource type="PackedScene" uid="uid://dmctxqy3nc15b" path="res://scenes/BrightnessSlider.tscn" id="3_g7iwe"]
 [ext_resource type="Texture2D" uid="uid://bq6ftlhvp2nb" path="res://sprites/returnToMenuUnhover.png" id="3_knt17"]
 [ext_resource type="Texture2D" uid="uid://devq2l175gv3j" path="res://sprites/returnToMenuHover.png" id="4_0p4lp"]
+[ext_resource type="Script" uid="uid://8v3jbs7os8un" path="res://scripts/borrarDatos.gd" id="6_knt17"]
 
 [node name="Opciones" type="Control"]
 layout_mode = 3
@@ -34,6 +35,7 @@ layout_mode = 2
 
 [node name="Volume" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_g7iwe")]
 layout_mode = 2
+value = 0.5
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -48,11 +50,23 @@ text = "Brillo"
 
 [node name="VolverAlMenuPrincipal" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 462.0
-offset_top = 639.0
-offset_right = 562.0
-offset_bottom = 739.0
+offset_left = 572.0
+offset_top = 642.0
+offset_right = 672.0
+offset_bottom = 742.0
 texture_normal = ExtResource("3_knt17")
 texture_hover = ExtResource("4_0p4lp")
 
+[node name="VolverAlMenuPrincipal2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 738.0
+offset_right = 481.0
+offset_bottom = 838.0
+rotation = -3.1196103
+texture_normal = ExtResource("3_knt17")
+texture_hover = ExtResource("4_0p4lp")
+script = ExtResource("6_knt17")
+
 [connection signal="pressed" from="VolverAlMenuPrincipal" to="." method="_on_volver_al_menu_principal_pressed"]
+[connection signal="pressed" from="VolverAlMenuPrincipal2" to="." method="_on_volver_al_menu_principal_2_pressed"]
