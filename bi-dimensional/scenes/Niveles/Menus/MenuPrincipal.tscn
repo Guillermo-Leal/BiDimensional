@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://r04f7ttfj2ec"]
+[gd_scene load_steps=13 format=3 uid="uid://r04f7ttfj2ec"]
 
 [ext_resource type="Script" uid="uid://be8lsbxkiil8v" path="res://scripts/menu_principal.gd" id="1_yx3rq"]
 [ext_resource type="Texture2D" uid="uid://yrrek6nnr8fp" path="res://sprites/FondoTemporal.png" id="2_12vqk"]
@@ -15,10 +15,10 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ev2af"]
 texture = ExtResource("2_12vqk")
 
-[node name="MenuPrincipal" type="Node2D" unique_id=511149820]
+[node name="MenuPrincipal" type="Node2D"]
 script = ExtResource("1_yx3rq")
 
-[node name="ButtonManager" type="Control" parent="." unique_id=1670333589]
+[node name="ButtonManager" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -2.0
@@ -26,7 +26,7 @@ offset_top = -2.0
 offset_right = 1044.0
 offset_bottom = 897.0
 
-[node name="Panel" type="Panel" parent="ButtonManager" unique_id=1677887283]
+[node name="Panel" type="Panel" parent="ButtonManager"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,7 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ev2af")
 
-[node name="Start" type="TextureButton" parent="ButtonManager" unique_id=1674390845]
+[node name="Start" type="TextureButton" parent="ButtonManager"]
 layout_mode = 0
 offset_left = 705.0
 offset_top = 327.0
@@ -44,7 +44,7 @@ offset_bottom = 477.0
 texture_normal = ExtResource("3_8x160")
 texture_hover = ExtResource("4_5r4x4")
 
-[node name="Options" type="TextureButton" parent="ButtonManager" unique_id=813509696]
+[node name="Options" type="TextureButton" parent="ButtonManager"]
 layout_mode = 0
 offset_left = 705.0
 offset_top = 633.0
@@ -53,7 +53,7 @@ offset_bottom = 783.0
 texture_normal = ExtResource("4_exmlw")
 texture_hover = ExtResource("5_5r4x4")
 
-[node name="Info" type="TextureButton" parent="ButtonManager" unique_id=1178200947]
+[node name="Info" type="TextureButton" parent="ButtonManager"]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 771.0
@@ -62,7 +62,7 @@ offset_bottom = 871.0
 texture_normal = ExtResource("7_kf14w")
 texture_hover = ExtResource("8_dh1jm")
 
-[node name="Quit" type="TextureButton" parent="ButtonManager" unique_id=657690855]
+[node name="Quit" type="TextureButton" parent="ButtonManager"]
 layout_mode = 0
 offset_left = 705.0
 offset_top = 480.0
@@ -71,7 +71,7 @@ offset_bottom = 630.0
 texture_normal = ExtResource("6_kf14w")
 texture_hover = ExtResource("7_dh1jm")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=398677119]
+[node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 20.0
 offset_top = 99.0
 offset_right = 779.0
