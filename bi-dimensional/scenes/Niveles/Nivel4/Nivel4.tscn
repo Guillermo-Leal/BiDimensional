@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bgrq2btsvdgwd"]
+[gd_scene load_steps=19 format=3 uid="uid://bgrq2btsvdgwd"]
 
 [ext_resource type="Script" uid="uid://c1mfoqomrc6h1" path="res://scripts/FinNivel.gd" id="1_mnsh3"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://sprites/world_tileset.png" id="2_toxij"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://x2rgwckbpi1y" path="res://scenes/fdp.tscn" id="10_h30qf"]
 [ext_resource type="AudioStream" uid="uid://c1lqyv7r7gig3" path="res://sounds/opendoor.mp3" id="11_mpkqx"]
 [ext_resource type="AudioStream" uid="uid://cm5bo4v2dnai1" path="res://sounds/death.mp3" id="12_qx04u"]
+[ext_resource type="PackedScene" uid="uid://x8vh7uvkry77" path="res://scenes/menu_pausa.tscn" id="13_qx04u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsqq0"]
 texture = ExtResource("2_toxij")
@@ -203,7 +204,7 @@ texture = ExtResource("3_doivt")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vdljv")
 
-[node name="Tutorial" type="Node2D"]
+[node name="Nivel4" type="Node2D"]
 script = ExtResource("1_mnsh3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -360,6 +361,8 @@ volume_db = -10.0
 [node name="DeathSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_qx04u")
 volume_db = -10.0
+
+[node name="MenuPausa" parent="." instance=ExtResource("13_qx04u")]
 
 [connection signal="body_entered" from="MundoNegro/Llave" to="MundoNegro/Llave" method="_on_body_entered"]
 [connection signal="pressed" from="Canvaslayer/PopupVictoria/Panel/Volver" to="." method="_on_volver_pressed"]
