@@ -27,6 +27,7 @@ SaveManager="*res://scripts/save_manager.gd"
 
 window/size/viewport_width=1046
 window/size/viewport_height=897
+window/size/resizable=false
 
 [input]
 
