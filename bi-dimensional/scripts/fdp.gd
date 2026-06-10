@@ -27,6 +27,8 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
+	
+	#If que detecta cuando se pulsa el boton change y cambia el mundo 
 	if Input.is_action_just_pressed("change"):
 		change = !change
 		var anim_actual = animated_sprite_2d.animation
@@ -48,6 +50,7 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
+	#animaciones y direccion del personaje
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
 	elif direction < 0:
@@ -88,7 +91,7 @@ func _physics_process(delta: float) -> void:
 					animated_sprite_2d.play("jumpBlack")
 	
 	
-	
+	#Movimiento del personaje
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -111,16 +114,16 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+# función que cambia de animación sin que se note el salto
 func cambiarAnim(anim):
 	var frame = animated_sprite_2d.frame
 	var progreso = animated_sprite_2d.frame_progress
-
-
 	animated_sprite_2d.play(anim)
 	animated_sprite_2d.frame = frame
 	animated_sprite_2d.frame_progress = progreso
 	
 func die():
+	#funcion de muerte
 	is_dead = true
 	velocity = Vector2.ZERO
 	if change == false:
@@ -131,7 +134,7 @@ func die():
 	muerte.play()
 	
 func _on_animated_sprite_2d_animation_finished() -> void:
-	print("Animacion terminada")
+	#Funcion que detecta la muerte y reinicia el mundo cambiandolo antes
 	if animated_sprite_2d.animation == "deathWhite" or animated_sprite_2d.animation =="deathBlack":
 		activar_mundo(mundo_negro, !change)
 		get_tree().reload_current_scene()
